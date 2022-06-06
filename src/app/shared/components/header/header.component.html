@@ -1,0 +1,41 @@
+<div class="bg-header">
+    <div class="header-menu">
+        <div class="search ">
+                <i class="pi pi-search"></i>
+                <input type="text" 
+                        pInputText 
+                        placeholder="Search here..."
+                        [(ngModel)]="searchInfo.input" (ngModelChange)="onChangeSearchInput()"   />
+        </div>
+        <div class="dropdown">
+            <svg-icon key="ring" class="ring" size="xl"></svg-icon>
+            <div class="select-user">
+                <svg-icon key="dr" size="xl"></svg-icon>
+                <span>Deko</span>
+                <!-- <i class="pi pi-angle-down"></i>
+                <ul class="dropdown-content">
+                    <li>
+                        <svg-icon key="dr" size="xl"></svg-icon>
+                        <span>Deko</span>
+                    </li>
+                    <li>
+                        <svg-icon key="dr" size="xl"></svg-icon>
+                        <span>Deko</span>
+                    </li>
+                    <li>
+                        <svg-icon key="dr" size="xl"></svg-icon>
+                        <span>Deko</span>
+                    </li>
+                    <li>
+                        <svg-icon key="dr" size="xl"></svg-icon>
+                        <span>Deko</span>
+                    </li>
+                </ul> -->
+                <p-dropdown [options]="actions" 
+                            [(ngModel)]="selectedCity1" 
+                            placeholder="Select action" optionLabel="name"
+	                        [showClear]="true"></p-dropdown>
+              </div>
+        </div>
+    </div>
+</div>

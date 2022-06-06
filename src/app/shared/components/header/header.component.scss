@@ -1,0 +1,79 @@
+@import '../../../../styles.scss';
+
+.bg-header{
+    background-color: $bg-sencond;
+
+    .header-menu{
+        display: flex;
+        justify-content: space-between;
+        //position: fixed;
+        // // position: sticky;
+        // // top: 0;
+
+        .search{
+            margin: 32px 0 16px 60px;
+            width: 264px;
+            height: 42px;
+            position: relative;
+
+             input{
+                width: 100%;
+                height: 100%;
+                font-size: 16px;
+                outline: none;
+                padding: 0 20px;
+                border-radius: 10px;
+                border: 1px solid #9AA0A8 ;
+                background-color: #293A58;
+            }
+             i{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 20px;
+                cursor: pointer;
+                font-style:25px;
+                color: #9AA0A8;
+            }
+        }
+        .dropdown{
+            position: relative;
+            margin: 34px 41px 22px 0;
+            display: flex;
+            justify-content: space-around;
+
+            .ring{
+                margin-right: 14px;
+            }
+
+            .select-user{
+                position: relative;
+                cursor: pointer;
+
+                span{
+                    color:$txt-color ;
+                    padding: 0 10px;
+                }
+                i{
+                    color: $color-main; 
+                }
+            }
+        }
+    }
+}
+:host ::ng-deep .p-dropdown {
+    background-color: #293A58;
+    color: $txt-color;
+
+    .p-dropdown-items{
+        background-color: #293A58;
+        .p-dropdown-item {
+            color: $txt-color;
+        }
+    }
+  }
+
+:host ::ng-deep .ng-valid{
+    color: $txt-color;
+}
+  

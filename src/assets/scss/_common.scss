@@ -1,0 +1,38 @@
+.fa__feature {
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+  height: fit-content;
+
+  height: 44px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  &-btn {
+    padding: 15px;
+    span {
+      padding-left: 8px;
+    }
+  }
+  &.primary {
+    background-color: $primary-color;
+    color: $text-white;
+  }
+  &.secondary {
+    background-color: $background-gray;
+    border: 1px solid $border-gray;
+    color: $text-dark;
+  }
+  &:hover {
+    opacity: $opacity80;
+  }
+}
+
+// <div class="fa__feature [primary - secondary]">
+//   <div class="fa__feature-btn">
+//     <i class="fas fa-plus"></i>
+//     <span>Register Patients</span>
+//   </div>
+// </div>

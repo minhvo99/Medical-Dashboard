@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lato&display=swap');
+$font-main:'Inter', sans-serif ;
+$font-second:'Lato', sans-serif;
+$color-main:#A6ACB8;
+$color-active:#FFFFFF;
+$bg-main:#1F2D47;
+$bg-sencond:#293A58;
+$txt-color:#FFFFFF;
+.bg-main{
+    background-color: $bg-main;
+}
+

@@ -1,0 +1,48 @@
+.fa-appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__right {
+    display: flex;
+  }
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #f5fbf5;
+  }
+  &__status {
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+    .fa-custom-select {
+      background-color: #3c4e6e;
+      padding-left: 12px;
+      color: #f5fbf5;
+      height: 40px;
+      background-image: url("../../../assets/icons/svg/vector.svg");
+    }
+  }
+  &__cabinet {
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+    .fa-custom-select {
+      background-color: #3c4e6e;
+      color: #f5fbf5;
+      padding-left: 12px;
+      height: 40px;
+      background-image: url("../../../assets/icons/svg/vector.svg");
+    }
+  }
+  &__new {
+    .fa-newBtn {
+      background-color: #8146ff !important;
+      transition: all ease 0.2s;
+      font-family: "Inter", sans-serif;
+      font-weight: 300;
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}

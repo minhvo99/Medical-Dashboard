@@ -1,0 +1,31 @@
+@import '../../../styles.scss';
+
+
+.card{
+    background-color: $bg-sencond !important;
+    color: $txt-color;
+
+    .card-header{
+        display: flex;
+        border-bottom: 0;
+        justify-content: space-between;
+
+        .img-doctor{
+            border-radius: 50%;
+            width: 58px;
+            margin-top: 21px;
+            margin-left: 8px;
+        }
+    }
+    .card-body{
+        .name{
+            
+        }
+    }
+    .card-footer{
+        border-top:0;
+    }
+
+}
+
+

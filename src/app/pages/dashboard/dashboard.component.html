@@ -1,0 +1,98 @@
+<div class="row mt-3">
+    <div class="col-lg-3 mb-3">
+        <div class="card-deck ">
+            <div class="card">
+                <div class="card-header">
+                    <div class="dots">
+                        <button type="button" pButton pRipple class="p-button-rounded p-button-text "
+                            icon="pi pi-ellipsis-h" (click)="menu.toggle($event)"></button>
+                        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="icon">
+                        <svg-icon key="appointment" size="xxl" width="60px" height="60px"></svg-icon>
+                    </div>
+                    <div class="content">
+                        <p>500</p>
+                        <p>Appointment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 mb-3">
+        <div class="card-deck ">
+            <div class="card">
+                <div class="card-header">
+                    <div class="dots">
+                        <button type="button" pButton pRipple class="p-button-rounded p-button-text "
+                            icon="pi pi-ellipsis-h" (click)="menu.toggle($event)"></button>
+                        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="icon">
+                        <svg-icon key="operation" size="xxl" width="60px" height="60px"></svg-icon>
+                    </div>
+                    <div class="content">
+                        <p>104</p>
+                        <p>Operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 mb-3">
+        <div class="card-deck ">
+            <div class="card">
+                <div class="card-header">
+                    <div class="dots">
+                        <button type="button" pButton pRipple class="p-button-rounded p-button-text "
+                            icon="pi pi-ellipsis-h" (click)="menu.toggle($event)"></button>
+                        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="icon">
+                        <svg-icon key="newpatients" size="xxl" width="60px" height="60px"></svg-icon>
+                    </div>
+                    <div class="content">
+                        <p>150</p>
+                        <p>New Patients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 mb-3">
+        <div class="card-deck ">
+            <div class="card">
+                <div class="card-header">
+                    <div class="dots">
+                        <button type="button" pButton pRipple class="p-button-rounded p-button-text "
+                            icon="pi pi-ellipsis-h" (click)="menu.toggle($event)"></button>
+                        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="icon">
+                        <svg-icon key="earning" size="xxl" width="60px" height="60px"></svg-icon>
+                    </div>
+                    <div class="content">
+                        <p>$20,500</p>
+                        <p>Earning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8">
+        <app-chart></app-chart>
+    </div>
+    <div class="col-lg-4">
+        <app-chart-bar></app-chart-bar>
+    </div>
+</div>

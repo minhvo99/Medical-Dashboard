@@ -1,0 +1,74 @@
+<div class="add-doctor">
+    <span>Doctor</span>
+    <div class="button-add">   
+        <button   (click)="showModalDialog()" 
+                    icon="pi pi-plus" 
+                    label="Add Doctor"
+                    class="p-button-rounded p-button-help" 
+                    icon="pi pi-plus"
+                    pButton 
+                    pRipple
+                    ></button>
+
+        <p-dialog   header="Add Doctor" 
+                    [(visible)]="displayModal" 
+                    [modal]="true" [style]="{width: '60vw'}" 
+                    [baseZIndex]="10000"
+                    [draggable]="false" 
+                    [resizable]="false"
+                    [formGroup]="myForm"
+                    >
+
+                    <span class="p-float-label">
+                        <input 
+                                id="float-input-invalid" 
+                                type="text" 
+                                pInputText  
+                                class="ng-invalid p-inputtext-lg"
+                                [formControlName]="controlNames.username"
+                                [innerMsg]="msgKeys"> 
+                        <label for="float-input-invalid">Username</label>
+                    </span>
+                    <p-dropdown 
+                        [options]="department" 
+                        placeholder="Department" 
+                        optionLabel="name"
+	                    [showClear]="true"
+                        [formControlName]="controlNames.department"
+                        [innerMsg]="msgKeys">
+                    </p-dropdown>
+                        <p-dropdown 
+                        [options]="department" 
+                        placeholder="Position" 
+                        optionLabel="name"
+	                    [showClear]="true"
+                        [formControlName]="controlNames.position"
+                        [innerMsg]="msgKeys">
+                    </p-dropdown>
+                    <span class="p-float-label">
+                        <input id="float-input-invalid" 
+                                type="text" 
+                                pInputText 
+                                class="ng-invalid p-inputtext-lg"
+                                [formControlName]="controlNames.phone"
+                                [innerMsg]="msgKeys"> 
+                        <label for="float-input-invalid">Phone number</label>
+                    </span>
+                    <span class="p-float-label">
+                        <input id="float-input-invalid" 
+                                type="email" 
+                                pInputText 
+                                class="ng-invalid p-inputtext-lg"
+                                [formControlName]="controlNames.email"
+                                [innerMsg]="msgKeys"> 
+                        <label for="float-input-invalid">Email</label>
+                    </span>
+
+            <ng-template pTemplate="footer">
+                <p-button icon="pi pi-check" (click)="onSubmitFormGroup()" label="Add" class="p-button-text">
+                </p-button>
+                <p-button icon="pi pi-times" (click)="displayModal=false" label="Cancel"></p-button>
+            </ng-template>
+        </p-dialog>
+    </div>
+</div>
