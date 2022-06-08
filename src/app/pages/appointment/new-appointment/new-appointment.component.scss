@@ -1,0 +1,38 @@
+select {
+    margin: 0 !important;
+  }
+  .no-gutter {
+    padding: 0;
+    margin: 0;
+  }
+  .row {
+    .user-phone-number {
+      background-color: #293a58;
+      border-color: #7988a3;
+      color: #9aa0a8;
+      width: 400px;
+    }
+    .p-input-icon-left {
+      margin-left: 85px;
+      margin-top: 30px;
+      input {
+        background-color: #293a58;
+        border-color: #7988a3;
+        color: #9aa0a8;
+        width: 400px;
+      }
+    }
+  
+    .form-select {
+      background-color: #293a58;
+      border-color: #7988a3;
+      color: #9aa0a8;
+      width: 400px;
+    }
+  
+    .image {
+      margin-left: 85px;
+      margin-top: 30px;
+    }
+  }
+  

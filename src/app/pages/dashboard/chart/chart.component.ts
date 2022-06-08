@@ -15,12 +15,7 @@ export class ChartComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    //Chart.defaults.plugins.legend
-    //Chart.defaults.backgroundColor = "#293A58";
-    // Chart.defaults.interaction.intersect = true;
-    // Chart.defaults.interaction.mode = 'index'
-  }
+  ngOnInit() {}
 
   ngAfterViewInit(): void {
     const me = this;
@@ -61,13 +56,13 @@ export class ChartComponent implements OnInit {
 
   private getDatasetsChart() {
     const canvas = document.getElementById(
-      'chartId'
+      "chartId"
     ) as HTMLCanvasElement | null;
 
-    const ctx = canvas!.getContext('2d');
+    const ctx = canvas!.getContext("2d");
     const gradient = ctx!.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, 'rgba(121,136,163,100)');
-    gradient.addColorStop(1, 'rgba(121,136,163,0)');
+    gradient.addColorStop(0, "rgba(121,136,163,100)");
+    gradient.addColorStop(1, "rgba(121,136,163,0)");
     const fakeDatasets = [
       {
         label: "New Patients",
@@ -76,7 +71,7 @@ export class ChartComponent implements OnInit {
             .fill(1)
             .map((item) => randomData(0, 10)),
         ],
-        backgroundColor:gradient,
+        backgroundColor: gradient,
         borderColor: "#8146FF",
         tension: 0.5,
         fill: true,
@@ -91,7 +86,7 @@ export class ChartComponent implements OnInit {
             .fill(1)
             .map((item) => randomData(0, 10)),
         ],
-        backgroundColor:gradient,
+        backgroundColor: gradient,
         borderColor: "#0075FF",
         tension: 0.5,
         fill: true,
@@ -109,6 +104,7 @@ export class ChartComponent implements OnInit {
       .fill(0)
       .map((_, index: number) => {
         const monthName = new Date();
+
         monthName.setMonth(index);
         labels.push(
           monthName.toLocaleDateString("default", { month: "short" })
@@ -119,7 +115,7 @@ export class ChartComponent implements OnInit {
 
   private getConfigOptionsChart() {
     const me = this;
-    const plugins = me.getConfigPluginsChart();
+    const plugins = me.getConfigPluginsChart(); //options.plugins
     return {
       responsive: true,
       plugins,
@@ -140,6 +136,8 @@ export class ChartComponent implements OnInit {
   }
 
   private getConfigPluginsChart() {
+    const me = this;
+    const title = me.getTitlePluginsChart();
     return {
       legend: {
         labels: {
@@ -147,20 +145,35 @@ export class ChartComponent implements OnInit {
           pointStyle: "rectRounded",
         },
       },
-      title: {
-        display: true,
-        text: "Hospital Survey",
-        align: "start",
-        padding: {
-          top: 10,
-          bottom: 10,
+      title,
+      tooltip: {
+        yAlign: "top",
+        boxHeight: 25,
+        padding: 12,
+        displayColors: false,
+        bodySpacing: 5,
+        callbacks: {
+          title: function (context: any) {
+            return "";
+          },
         },
-        font: {
-          weight: "bold",
-          size: 26,
-        },
-        color: "#FFFFFF",
       },
+    };
+  }
+  private getTitlePluginsChart() {
+    return {
+      display: true,
+      text: "Hospital Survey",
+      align: "start",
+      padding: {
+        top: 10,
+        bottom: 10,
+      },
+      font: {
+        weight: "bold",
+        size: 26,
+      },
+      color: "#FFFFFF",
     };
   }
 }

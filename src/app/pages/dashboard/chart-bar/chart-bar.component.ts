@@ -35,13 +35,7 @@ export class ChartBarComponent implements OnInit {
           me.chartInstance = new Chart(ctx, {
             type: 'bar',
             data,
-            options:{
-              scales: {
-                y: {
-                  beginAtZero: true
-                }
-              }
-            }
+            options,
           });
           clearInterval(interval);
         }
@@ -72,6 +66,7 @@ export class ChartBarComponent implements OnInit {
         ],
         backgroundColor: ['#E5E5E5'],
         borderColor: '#8146FF',
+        hoverBackgroundColor: "#8146FF",
       }
     ];
     return fakeDatasets;
@@ -100,6 +95,7 @@ export class ChartBarComponent implements OnInit {
       scales: {
         x: {},
         y: {
+          beginAtZero: true,
           grid: {
             display: false,
           },
