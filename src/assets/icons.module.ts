@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { asAppoinment } from './icons/svg/appoinment';
 import { asAppointment } from './icons/svg/appointment';
+import { asArrowDown } from './icons/svg/arrow-down';
 import { asCalls } from './icons/svg/calls';
 import { asChats } from './icons/svg/chats';
 import { asDashboard } from './icons/svg/dashboard';
@@ -14,6 +15,7 @@ import { asImgDoctor } from './icons/svg/img-doctor';
 import { asLogo } from './icons/svg/logo';
 import { asNewPetients } from './icons/svg/newPatients';
 import { asOperations } from './icons/svg/operations';
+import { asPatientF } from './icons/svg/patient-1';
 import { asPatients } from './icons/svg/patients';
 import { asPlus } from './icons/svg/plus';
 import { asRing } from './icons/svg/ring';
@@ -50,7 +52,9 @@ import { asUser } from './icons/svg/user';
         asAppointment,
         asOperations,
         asNewPetients,
-        asEarning
+        asEarning,
+        asArrowDown,
+        asPatientF
       ]
     }),
   ],

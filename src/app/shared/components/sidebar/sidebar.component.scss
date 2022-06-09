@@ -1,7 +1,7 @@
-@import '../../../../styles.scss';
+@import '../../../../assets/app.scss';
 
 .bg-sidebar {
-  background-color: #293a58;
+  background-color: $bg-sencond;
 
   .logo {
     padding-left: 20px;
@@ -32,18 +32,18 @@
           color: $color-main;
           font-size: 16px;
           padding-top: 10px;
-          font-family: $font-main;
+          font-family: $primary-font;
         }
       }
       .active-menu{
-          background-color: #8146FF;
+          background-color: $primary-color;
           border-radius: 5px;
           padding:8px 0 10px 18px;
           margin-right: 10px;
           margin-left: 10px !important;
-          color: $color-active !important;
+          color: $text-white !important;
           p{
-              color: #FFFFFF !important;
+              color: $text-white !important;
           }
       }
     }
@@ -62,7 +62,7 @@
     .regifter-btn {
         display: flex;
         flex-direction: row;
-        background-color:#1F2D47;
+        background-color:$bg-main;
         border-radius: 10px;
         padding: 8px 33px 0 12px;
         cursor: pointer;
@@ -71,7 +71,7 @@
         margin-left: 10px;
         font-size: 16px;
         padding-top: 10px;
-        color: $color-active;
+        color: $text-white;
       }
     }
   }

@@ -28,7 +28,7 @@ export class AppointmentComponent implements OnInit {
       
     }
     newAppoint(): void {
-      this.router.navigate(['appointment','new-appointment']);
+      this.router.navigate(['new-appointment']);
     }
 
 }

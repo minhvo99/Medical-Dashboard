@@ -1,9 +1,9 @@
-@import '../../../styles.scss';
+@import '../../../assets/app.scss';
 
 
 .card{
     background-color: $bg-sencond !important;
-    color: $txt-color;
+    color: $text-white;
 
     .card-header{
         display: flex;

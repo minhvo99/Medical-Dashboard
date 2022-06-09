@@ -1,37 +1,36 @@
 <div class="row mt-3">
-  <div class="fa-appointment-container">
-  <!-- Header of the appointment -->
-  <div class="fa-appointment-header">
-    <!-- Lefthand div -->
-    <div class="fa-appoinment-header__left">
-      <h3 class="fa-appointment-header__title">Upcoming Appointments</h3>
+    <div class="fa-appointment-container">
+    <!-- Header of the appointment -->
+    <div class="fa-appointment-header">
+      <!-- Lefthand div -->
+      <div class="fa-appoinment-header__left">
+        <h3 class="fa-appointment-header__title">Upcoming Appointments</h3>
+      </div>
+      <!-- Right-hand div -->
+      <div class="fa-appointment-header__right">
+        <div class="fa-appointment-header__status">
+          <p-dropdown [options]="status" 
+                      [(ngModel)]="selectedStatus" 
+                      placeholder="All Statuses" 
+                      optionLabel="name"
+	                    [showClear]="true"></p-dropdown>
+        </div>
+        <div class="fa-appointment-header__cabinet">
+          <p-dropdown [options]="status" 
+                      [(ngModel)]="selectedStatus" 
+                      placeholder="All Cabinets" 
+                      optionLabel="name"
+	                    [showClear]="true"></p-dropdown>
+        </div>
+        <div class="fa-appointment-header__new">
+          <button  (click)="newAppoint()"  class="fa-newBtn" pButton type="button">New Appointment</button>
+        </div>
+      </div>
     </div>
-    <!-- Right-hand div -->
-    <div class="fa-appointment-header__right">
-      <div class="fa-appointment-header__status">
-        <p-dropdown [options]="status" 
-                    [(ngModel)]="selectedStatus" 
-                    placeholder="All Statuses" 
-                    optionLabel="name"
-                    [showClear]="true"></p-dropdown>
-      </div>
-      <div class="fa-appointment-header__cabinet">
-        <p-dropdown [options]="status" 
-                    [(ngModel)]="selectedStatus" 
-                    placeholder="All Cabinets" 
-                    optionLabel="name"
-                    [showClear]="true"></p-dropdown>
-      </div>
-      <div class="fa-appointment-header__new">
-        <button  (click)="newAppoint()"  class="fa-newBtn" pButton type="button">New Appointment</button>
-      </div>
+    <!-- End of header -->
+    <div>
+      <app-list-appointment></app-list-appointment>
     </div>
   </div>
-  <!-- End of header -->
-  <div>
-    <app-list-appointment></app-list-appointment>
-    <router-outlet></router-outlet>
-  </div>
 </div>
-</div>
-
+  

@@ -13,14 +13,8 @@ import { PatientsComponent } from './pages/patients/patients.component';
 const routes: Routes = [
   {path:'', redirectTo:'/dashboard', pathMatch:'full'},
   { path: 'dashboard', component: DashboardComponent },
-  {
-    path: 'appointment',
-     component: AppointmentComponent,
-     children: [{
-      path: 'new-appointment',
-      component: NewAppointmentComponent
-    }]
-    },
+  {path: 'appointment',component: AppointmentComponent,},
+  {path: 'new-appointment',component: NewAppointmentComponent},
   { path: 'doctors',component: DoctorComponent,},
   {path: 'departments', component: DepartmentsComponent,},
   {path: 'patients',component: PatientsComponent,},

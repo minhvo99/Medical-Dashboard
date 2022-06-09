@@ -1,0 +1,41 @@
+<section class="bg-section">
+    <div class="header-patient-list">
+        <p>Appointment Patients List</p>
+        <div class="action">
+            <button type="button" pButton pRipple icon="pi pi-ellipsis-h" (click)="menu.toggle($event)"
+                class="p-button-rounded p-button-text"></button>
+            <p-menu #menu [popup]="true" [model]="items"></p-menu>
+        </div>
+    </div>
+    <div class="body-patient-list">
+        <p-table [value]="patients">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>No</th>
+                    <th>Patients Name</th>
+                    <th>Date of admit</th>
+                    <th>Disease</th>
+                    <th>Room No</th>
+                    <th>Action</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr *ngFor="let item of patients">
+                    <td>{{item.id}}</td>
+                    <td>
+                        <svg-icon key="{{item.avatar}} " size="xl"></svg-icon>
+                        <span>{{item.name}}</span>
+                    </td>
+                    <td>{{item.date }}</td>
+                    <td>{{item.disease}}</td>
+                    <td>{{item.room}}</td>
+                    <td>
+                        <button type="button" pButton pRipple icon="pi pi-ellipsis-h" (click)="menu.toggle($event)"
+                class="p-button-rounded p-button-text"></button>
+            <p-menu #menu [popup]="true" [model]="items"></p-menu>  
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</section>

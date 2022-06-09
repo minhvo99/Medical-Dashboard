@@ -1,4 +1,4 @@
-@import '../../../../styles.scss';
+@import '../../../../assets/app.scss';
 
 .bg-header{
     background-color: $bg-sencond;
@@ -6,9 +6,6 @@
     .header-menu{
         display: flex;
         justify-content: space-between;
-        //position: fixed;
-        // // position: sticky;
-        // // top: 0;
 
         .search{
             margin: 32px 0 16px 60px;
@@ -23,8 +20,8 @@
                 outline: none;
                 padding: 0 20px;
                 border-radius: 10px;
-                border: 1px solid #9AA0A8 ;
-                background-color: #293A58;
+                border: 1px solid $color-icon ;
+                background-color: $bg-sencond;
             }
              i{
                 position: absolute;
@@ -33,7 +30,7 @@
                 right: 20px;
                 cursor: pointer;
                 font-style:25px;
-                color: #9AA0A8;
+                color: $color-icon;
             }
         }
         .dropdown{
@@ -51,7 +48,7 @@
                 cursor: pointer;
 
                 span{
-                    color:$txt-color ;
+                    color:$text-white ;
                     padding: 0 10px;
                 }
                 i{
@@ -62,18 +59,18 @@
     }
 }
 :host ::ng-deep .p-dropdown {
-    background-color: #293A58;
-    color: $txt-color;
+    background-color: $bg-sencond;
+    color: $text-white;
 
     .p-dropdown-items{
-        background-color: #293A58;
+        background-color: $bg-sencond;
         .p-dropdown-item {
-            color: $txt-color;
+            color: $text-white;
         }
     }
   }
 
 :host ::ng-deep .ng-valid{
-    color: $txt-color;
+    color: $text-white;
 }
   

@@ -92,6 +92,11 @@ export class ChartBarComponent implements OnInit {
     return {
       responsive: true,
       plugins,
+      // interaction: {
+      //   mode: "index",
+      //   intersect: false,
+      //   position: "nearest",
+      // },
       scales: {
         x: {},
         y: {

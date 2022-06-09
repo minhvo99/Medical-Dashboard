@@ -1,11 +1,11 @@
-
+@import '../../../../assets/app.scss'; 
 .add-doctor{
     display: flex;
     justify-content: space-between;
     margin: 10px 48px;
 
     span{
-        color: white;
+        color: $text-white;
         font-size: 18px;
     }
     .button-add{

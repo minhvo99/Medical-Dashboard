@@ -23,6 +23,8 @@ import { PatientsComponent } from './pages/patients/patients.component';
 import { PrimeNgModule } from './primeNG/primeng.module';
 import { ShareModule } from './shared/share.module';
 import { SvgIconsModule } from '@ngneat/svg-icon';
+import { AppointmentPatientsListComponent } from './pages/dashboard/appointment-patients-list/appointment-patients-list.component';
+import { TopDoctorListComponent } from './pages/dashboard/top-doctor-list/top-doctor-list.component';
 
 //firebase
 
@@ -42,6 +44,8 @@ import { SvgIconsModule } from '@ngneat/svg-icon';
     ChartBarComponent,
     ListAppointmentComponent,
     NewAppointmentComponent,
+    AppointmentPatientsListComponent,
+    TopDoctorListComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,8 @@ import { SvgIconsModule } from '@ngneat/svg-icon';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -128,7 +128,7 @@ export class ChartComponent implements OnInit {
         x: {},
         y: {
           grid: {
-            display: false,
+            display: true,
           },
         },
       },

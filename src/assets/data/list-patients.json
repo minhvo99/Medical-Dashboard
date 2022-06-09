@@ -1,0 +1,28 @@
+{
+    "data":[
+        {
+            "id": "01",
+            "name": "Jacad Monie",
+            "avatar":"patient01",
+            "date":"28-08-2021",
+            "disease": "Jaundice",
+            "room":"140"
+        },
+        {
+            "id": "02",
+            "name": "Killan James",
+            "avatar":"patient01",
+            "date":"28-08-2021",
+            "disease": "Influenza",
+            "room":"210"
+        },
+        {
+            "id": "03",
+            "name":"Wade Jack",
+            "avatar":"patient01",
+            "date":"11-08-2021",
+            "disease": "Diarrhe",
+            "room":"154"
+        }
+    ]
+}

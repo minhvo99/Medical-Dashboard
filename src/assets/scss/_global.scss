@@ -1,15 +1,8 @@
-.wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-
-  display: flex;
+@import 'variable.scss';
+.no-gutter{
+  margin: 0;
+  padding: 0;
 }
-
-.content {
-  width: 100%;
-  max-width: 1190px;
-  &__main {
-    height: 100%;
-    background-color: $background-gray;
-  }
+.bg-main{
+  background-color: $bg-main;
 }
