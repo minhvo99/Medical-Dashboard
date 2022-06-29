@@ -1,0 +1,69 @@
+<div class="add-doctor">
+    <div class="button-add">
+        <svg-icon key="edit" (click)="showModalDialog()" size="xxl"></svg-icon>
+        <p-dialog   header="Edit Doctor" 
+                    [modal]="true" 
+                    [style]="{width: '60vw'}" 
+                    [baseZIndex]="10000" 
+                    [draggable]="false"
+                    [resizable]="false"
+                    [(visible)]="displayModal">
+            <div class="row">
+                <div class="col-sm-12 col-lg-4">
+                </div>
+                <div class="col-sm-12 col-lg-8 order-lg-2">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input  type="text" 
+                                pInputText 
+                                placeholder="Name"
+                                [(ngModel)]="doctor.username"
+                                >
+                    </div>
+                    <h5 class="mb-0 mt-3">Status</h5>
+                    <p-selectButton     
+                                    optionValue="value" 
+                                    [(ngModel)]="doctor.status"
+                                    [options]="stateOptions" 
+                                    optionLabel="label"
+                                    optionValue="value">
+                    </p-selectButton>
+                    <h5 class="mb-0 mt-3">Position</h5>
+                    <p-dropdown 
+                            placeholder="Select a Position" 
+                            [options]="department"  
+                            optionLabel="label" 
+                            optionValue="value"
+                            [showClear]="true"
+                            [(ngModel)]="doctor.position"
+                            >
+                    </p-dropdown>
+                    <h5 class="mb-0 mt-3">Department</h5>
+                    <p-dropdown     
+                                placeholder="Select a Department" 
+                                [options]="department" 
+                                optionLabel="label" 
+                                optionValue="value"
+                                [showClear]="true"
+                                [(ngModel)]="doctor.department"
+                                >
+                    </p-dropdown>
+
+                    <div class="p-inputgroup mt-3">
+                        <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+                        <input type="text" pInputText placeholder="Phone" [(ngModel)]="doctor.phone">
+                    </div>
+                    <div class="p-inputgroup mt-3">
+                        <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
+                        <input type="text" pInputText placeholder="E-mail" [(ngModel)]="doctor.email">
+                    </div>
+                </div>
+            </div>
+            <ng-template pTemplate="footer">
+                <p-button icon="pi pi-check" (click)="editDoctor(doctor.id)" label="Update" class="p-button-text">
+                </p-button>
+                <p-button icon="pi pi-times" label="Cancel" class="p-button-secondary"></p-button>
+            </ng-template>
+        </p-dialog>
+    </div>
+</div>

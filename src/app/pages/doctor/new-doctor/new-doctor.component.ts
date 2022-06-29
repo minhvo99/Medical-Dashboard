@@ -4,46 +4,48 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { MessageService, PrimeNGConfig } from 'primeng/api';
 
-import { PrimeNGConfig } from 'primeng/api';
-
-interface Department {
-  name: string;
-  code: string;
-}
+import { Doctor } from 'src/app/shared/models/doctor.model';
 
 @Component({
   selector: 'app-new-doctor',
   templateUrl: './new-doctor.component.html',
   styleUrls: ['./new-doctor.component.scss'],
+  providers: [MessageService]
 })
-export class NewDoctorComponent implements OnInit {
-  department!: Department[];
+export class NewDoctorComponent implements OnInit , OnDestroy{
+  @Output() addDoctor = new EventEmitter<Doctor>()
+  department!: any;
+  positions!: any;
 
-  selectedDepartment!: Department;
-
-  txtName!: string;
-  txtDepartment!: string;
-  txtPosition!: string;
-  txtPhone!: string;
-  txtEmail!: string;
+  selectedDepartment!: any;
+  stateOptions!: any[];
+  state: string = 'off';
+  doctor = ''
+  doctors! : Doctor[] 
 
   constructor(
     private primengConfig: PrimeNGConfig,
     private formBuilder: FormBuilder,
-    private el: ElementRef
   ) {
+    this.positions = [
+      {}
+    ]
     this.department = [
-      { name: 'MBBS, M.D of Medicine', code: 'NY' },
-      { name: 'MBBS, M.D of Medicine', code: 'NY' },
-      { name: 'MBBS, M.D of Medicine', code: 'NY' },
-      { name: 'MBBS, M.D of Medicine', code: 'NY' },
+      { label: 'MBBS, M.D of Medicine', value: 'MBBS, M.D of Medicine' },
+      { label: 'MBBS, M.D of Medicine', value: 'MBBS, M.D of Medicine' },
+      { label: 'MBBS, M.D of Medicine', value: 'MBBS, M.D of Medicine' },
+      { label: 'MBBS, M.D of Medicine', value: 'MBBS, M.D of Medicine' },
+    ];
+    this.stateOptions = [
+      { label: 'Online', value: 'online' },
+      { label: 'Offline', value: 'offline' },
     ];
   }
   //validate form
-  myForm!: FormGroup;
+ myForm!: FormGroup;
 
   public controlNames = {
     username: 'username',
@@ -52,13 +54,15 @@ export class NewDoctorComponent implements OnInit {
     email: 'email',
     phone: 'phone',
     groups: 'groups',
+    image: 'image',
+    status : 'status'
   };
 
   public msgKeys = {
     required: 'Please input data',
     minlength: 'min length',
     maxlength: 'max length',
-    pattern: 'sai roi con cho',
+    pattern: 'khong dung dinh dang',
   };
 
   ngOnInit(): void {
@@ -70,15 +74,22 @@ export class NewDoctorComponent implements OnInit {
     const me = this;
     me.myForm = me.formBuilder.group({
       [me.controlNames.username]: ['',[Validators.required, Validators.minLength(4)]],
-      [me.controlNames.department]: ['', [Validators.required]],
-      [me.controlNames.position]: ['', [Validators.required]],
+      [me.controlNames.status]:['',[]],
+      [me.controlNames.department]:['',[]],
+      [me.controlNames.position]:['',[]],
       [me.controlNames.phone]: ['',[Validators.required,Validators.pattern('[- +()0-9]+'),Validators.maxLength(11)]],
       [me.controlNames.email]: ['', [Validators.required, Validators.email]],
     });
   }
 
+  onChangedPosition(event: any) {
+    const me = this;
+  }
+
   public onSubmitFormGroup() {
     const me = this;
+    const doctor = me.myForm.getRawValue() as Doctor;
+    const valid = me.myForm.valid;
     me.myForm.markAsDirty();
     me.myForm.markAllAsTouched();
     me.myForm.updateValueAndValidity();
@@ -88,23 +99,35 @@ export class NewDoctorComponent implements OnInit {
       control?.markAllAsTouched();
       control?.updateValueAndValidity();
     });
+    
+    if(!valid){
+      return me.focusElementInvalid();
+    }
+    
     me.focusElementInvalid();
+    me.addDoctor.emit(doctor)
+    me.onClearForm()
   }
   private focusElementInvalid() {
-    // const invalidInputControl = me.el.nativeElement.querySelectorAll('input.ng-invalid');
-
+    // const invalidInputControl = me.el.nativeElement.querySelectorAll('.input-ng-invalid');
+    //console.log(invalidInputControl);
     // if(invalidInputControl){
     //   invalidInputControl.focus();
     // }
     const me = this;
-    const listEl = document.querySelectorAll('.inpur-ng-invalid');
+    const listEl = document.querySelectorAll('.input-ng-invalid');
     for (let i = 0; i < listEl.length; i++) {
       (listEl.item(i) as HTMLElement)?.focus();
       return;
     }
   }
 
-  //
+  onClearForm(){
+    if(this.myForm.value){
+      this.myForm.reset()
+      this.displayModal = false
+    }
+  }
 
   displayModal!: boolean;
 
@@ -119,5 +142,8 @@ export class NewDoctorComponent implements OnInit {
   showPositionDialog(position: string) {
     this.position = position;
     this.displayPosition = true;
+  }
+  ngOnDestroy(): void {
+    
   }
 }

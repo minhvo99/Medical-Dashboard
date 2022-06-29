@@ -11,14 +11,14 @@
     .button-add{
         span{
             margin-top: 20px;
-            .p-inputtext-lg{
-                width: 100%;
-            }
+            
         }
     }
 }
 :host ::ng-deep .p-dropdown {
-    width: 100%;
+    width: 50%;
     margin-top: 20px;
   }
-  
+span.p-inputgroup-addon{
+    margin-top: 0 !important;
+}

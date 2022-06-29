@@ -6,10 +6,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DropdownModule } from 'primeng/dropdown';
+import { PhoneFormatPipe } from './pipes/phone-format.pipe';
 
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent],
+  declarations: [HeaderComponent, SidebarComponent, PhoneFormatPipe],
   imports: [IconsModule, DialogModule,FormsModule, RouterModule,DropdownModule],
   exports: [HeaderComponent, SidebarComponent],
 })

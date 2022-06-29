@@ -10,18 +10,45 @@
         border-bottom: 0;
         justify-content: space-between;
 
-        .img-doctor{
-            border-radius: 50%;
-            width: 58px;
-            margin-top: 21px;
-            margin-left: 8px;
-        }
+            .img-doctor{
+                border-radius: 50%;
+                width: 58px;
+                margin-top: 21px;
+                margin-left: 8px;
+            }
+            .online{
+                position: absolute;
+                top: 72px;
+                left: 72px;
+                height: 10px;
+                width: 10px;
+                background-color:#12BA76;
+                border-radius: 50%;
+                display: inline-block;
+            }
+            .offline{
+                position: absolute;
+                top: 72px;
+                left: 72px;
+                height: 10px;
+                width: 10px;
+                background-color:#DBDBDB;
+                border-radius: 50%;
+                display: inline-block;
+            }
+            .dots{
+                display: flex;
+                cursor: pointer;
+            }
+        
+
+        
     }
-    .card-body{
-        .name{
+    // .card-body{
+    //     .name{
             
-        }
-    }
+    //     }
+    // }
     .card-footer{
         border-top:0;
     }

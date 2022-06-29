@@ -7,13 +7,17 @@ import { asArrowDown } from './icons/svg/arrow-down';
 import { asCalls } from './icons/svg/calls';
 import { asChats } from './icons/svg/chats';
 import { asDashboard } from './icons/svg/dashboard';
+import { asDelete } from './icons/svg/delete';
 import { asDepartments } from './icons/svg/department';
 import { asDoctor } from './icons/svg/doctor';
 import { asDr } from './icons/svg/dr';
 import { asEarning } from './icons/svg/Earing';
+import { asEdit } from './icons/svg/edit';
 import { asImgDoctor } from './icons/svg/img-doctor';
 import { asLogo } from './icons/svg/logo';
 import { asNewPetients } from './icons/svg/newPatients';
+import { asOffline } from './icons/svg/offline';
+import { asOnline } from './icons/svg/online';
 import { asOperations } from './icons/svg/operations';
 import { asPatientF } from './icons/svg/patient-1';
 import { asPatients } from './icons/svg/patients';
@@ -54,7 +58,11 @@ import { asUser } from './icons/svg/user';
         asNewPetients,
         asEarning,
         asArrowDown,
-        asPatientF
+        asPatientF,
+        asOffline,
+        asOnline,
+        asEdit,
+        asDelete
       ]
     }),
   ],

@@ -78,7 +78,7 @@ export class InnerMsgDirective implements OnInit, OnDestroy {
     const div = document.createElement('div');
     div.classList.add(CLASS_NAME_MSG);
     div.innerHTML = `
-      <span style='color: red'>${msg}</span>
+      <span style='color: red'> ${msg}</span>
     `;
     const me = this;
     (me.el.nativeElement as HTMLElement).parentElement?.appendChild(div);
@@ -89,13 +89,12 @@ export class InnerMsgDirective implements OnInit, OnDestroy {
     div.classList.add(CLASS_NAME_MSG);
     let newArrMsg = arrMsg || [];
     newArrMsg = newArrMsg.map(msg => {
-      return `<span>${msg}</span>`;
+      console.log(msg);
+      return `<span> ${msg}</span>`;
     });
     const msgInner = newArrMsg.join('<br/>');
-    div.innerHTML = `
-      <lable>${msgInner}</lable>
-      
-    `;
+    div.innerHTML = `<lable>${msgInner}</lable>`;
+    
     const me = this;
     (me.el.nativeElement as HTMLElement).parentElement?.appendChild(div);
   }

@@ -1,33 +1,29 @@
-<app-new-doctor></app-new-doctor>
+<app-new-doctor (addDoctor)="onAddDoctor($event)"></app-new-doctor>
 <div class="row">
-    <div class="col-lg-3 mb-3"
-    *ngFor="let doctor of doctors">
+    <div class="col-lg-3 mb-3" *ngFor="let doctor of doctors">
         <div class="card-deck ">
             <div class="card">
                 <div class="card-header">
-                    <!-- <svg-icon key="img-doctor" width="58px" height="58px"></svg-icon> -->
-                    <img class="img-doctor" src="{{doctor.avatar}}" alt="">
+                    <img class="img-doctor" src="../../../assets/images/doctor01.png" alt="{{doctor.username}}">
+                    <span ngClass="{{doctor.status}}"></span>
                     <div class="dots">
-                        <button type="button" 
-                                pButton pRipple 
-                                icon="pi pi-ellipsis-h" 
-                                (click)="menu.toggle($event)" 
-                                class="p-button-rounded p-button-text"></button>
-                        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                        <app-edit-doc-tor [doctor]="doctor"></app-edit-doc-tor>
+                        <svg-icon key="delete" size="xxl" (click)="deleteDoctor(doctor.id)"></svg-icon>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h4 class="name">{{doctor.firstName + " ." + doctor.lastName}}</h4>
-                    <p class="department">{{doctor.derpartment}}</p>
+                    <h4 class="name">{{doctor.username}}</h4>
                     <p class="position">{{doctor.position}}</p>
+                    <h4 class="department">{{doctor.department}}</h4>
                 </div>
                 <div class="card-footer">
-                    <p class="phone">Phone: {{doctor.phone}}</p>
-                    <p class="email">Email: {{doctor.mail}}</p>
+                    <p class="phone">Phone: {{doctor.phone }}</p>
+                    <p class="email">Email: {{doctor.email}}</p>
                 </div>
             </div>
         </div>
 
     </div>
-    
+
 </div>
+<p-toast></p-toast>

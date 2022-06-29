@@ -48,13 +48,8 @@ export class AppointmentPatientsListComponent implements OnInit, OnDestroy {
           ]}
       ];
 
-      this.subscriptions = this.patientsListService
-                .getPatientsList()
-                .subscribe((listPatient : any)=> {
-        this.patients = listPatient.data
-
-        console.log(listPatient.data);
-        
+      this.subscriptions = this.patientsListService.getPatientsList().subscribe((listPatient : any)=> {
+        this.patients = listPatient
       })
       
       
